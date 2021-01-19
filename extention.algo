@@ -1,0 +1,31 @@
+ALGORITHM countWords(str)
+VAR
+  str:string
+BEGIN
+     return str.split(" ").length;
+     
+END
+
+ALGORITHM countChar(str)
+VAR
+ str:string
+ character:char
+BEGIN
+    return str.length
+END
+
+ALGORITHM countVowels(str)
+VAR
+  /*var a = str.split("");
+  var count = 0;*/
+  str:string 
+  vowels:char
+BEGIN
+  var a = str.split("");
+  var count = 0;
+  for( var i = 0; i <= str.length ; i++)
+  if( a[i] == 'u' || a[i] == 'e' || a[i]=='o' || a[i]=='a' || a[i] =='i')
+  count++;
+ return count;
+
+END
