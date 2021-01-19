@@ -1,31 +1,24 @@
 ALGORITHM countWords(str)
 VAR
-  str:string
-BEGIN
-     return str.split(" ").length;
-     
-END
+  c : CHAR := '';
+    nb_char : INTEGER := 0;
+    nb_word : INTEGER := 0;
+    nb_vow : INTEGER := 0;
+    BEGIN
+ WHILE (c <> '.') DO
+        Read(c);
+        nb_char := nb_char ++;
+        IF (c = 'a' OR c='e' OR c='i' OR c='o' OR c='u' OR c='y') THEN
+            nb_vow := nb_vow ++;
+        END_IF
 
-ALGORITHM countChar(str)
-VAR
- str:string
- character:char
-BEGIN
-    return str.length
-END
+        IF (c=' ') THEN
+            nb_word := nb_word ++;
+        END_IF
+        
+    END_WHILE
 
-ALGORITHM countVowels(str)
-VAR
-  /*var a = str.split("");
-  var count = 0;*/
-  str:string 
-  vowels:char
-BEGIN
-  var a = str.split("");
-  var count = 0;
-  for( var i = 0; i <= str.length ; i++)
-  if( a[i] == 'u' || a[i] == 'e' || a[i]=='o' || a[i]=='a' || a[i] =='i')
-  count++;
- return count;
-
+    Write("The length of the sentence is ",nb_char);
+    Write("The number of words in the sentence is ",nb_word);
+    Write("he number of vowels in the sentence. is ",nb_vow);
 END
